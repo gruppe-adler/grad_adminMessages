@@ -27,7 +27,7 @@ Gruppe Adler Admin Messages adds a message box to the escape menu. Allows player
 
 ![](https://i.imgur.com/dGDDH5m.png)
 
-### There are options to contact everyone, different groups or individual players.
+### There are options to contact everyone, different sides or individual players.
 
 ![](https://i.imgur.com/QfKATzy.png)
 
