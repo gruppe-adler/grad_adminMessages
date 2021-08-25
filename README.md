@@ -2,7 +2,7 @@
 
 <p align="center">
     <a href="https://github.com/gruppe-adler/grad_adminMessages/releases/latest">
-        <img src="https://img.shields.io/github/release/gruppe-adler/grad_adminMessages.svg?style=flat-square" alt="grad_adminMessages Version">
+        <img src="https://img.shields.io/github/v/release/gruppe-adler/grad_adminMessages.svg?style=flat-square" alt="grad_adminMessages Version">
     </a>
     <a href="https://github.com/gruppe-adler/grad_adminMessages/issues">
         <img src="https://img.shields.io/github/issues-raw/gruppe-adler/grad_adminMessages.svg?style=flat-square&label=Issues" alt="grad_adminMessages Issues">
