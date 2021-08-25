@@ -21,7 +21,7 @@ if (
     private _textHeight = ctrlTextHeight _ctrlText;
     /* private _textWidth = ctrlTextWidth _ctrlText; */
 
-    (ctrlPosition _ctrlText) params ["_origX","_origY","_origW","_origH"];
+    (ctrlPosition _ctrlText) params ["_origX","_origY","_origW"];
 
     _ctrlText ctrlSetPosition [_origX,_origY - _textHeight,_origW,_textHeight];
     _ctrlText ctrlCommit 0;

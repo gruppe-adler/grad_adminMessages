@@ -12,17 +12,17 @@ private _fnc_getHeadlineText = {
     _text
 };
 
-private _fnc_addHeadline = {
-    params ["_locStr"];
-    private _index = [[_locStr] call _fnc_getHeadlineText,-1] call _fnc_addEntry;
-    _ctrl lbSetColor [_index,[0.7,0.7,0.7,1]];
-};
-
 private _fnc_addEntry = {
     params ["_text","_data"];
     private _index = _ctrl lbAdd _text;
     _ctrl lbSetData [_index,if !(_data isEqualType "") then {str _data} else {_data}];
     _index
+};
+
+private _fnc_addHeadline = {
+    params ["_locStr"];
+    private _index = [[_locStr] call _fnc_getHeadlineText,-1] call _fnc_addEntry;
+    _ctrl lbSetColor [_index,[0.7,0.7,0.7,1]];
 };
 
 
