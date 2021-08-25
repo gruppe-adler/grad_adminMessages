@@ -34,4 +34,4 @@ Gruppe Adler Admin Messages adds a message box to the escape menu. Allows player
 ## Message view
 ![](https://i.imgur.com/72JWOoY.png)
 
-This is how it looks for the reciver of the message.
+This is how it looks for the receiver of the message.
