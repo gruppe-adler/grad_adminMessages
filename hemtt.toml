@@ -1,0 +1,22 @@
+name = "Gruppe Adler Admin Messages"
+prefix = "grad_adminMessages"
+author = "McDiod, Salbei"
+files = [
+    "mod.cpp",
+    "logo_active_ca.paa",
+    "logo_ca.paa",
+    "overview_co.paa",
+    "logo_small_ca.paa",
+    "LICENSE",
+    "README.md"
+]
+
+key_name = "{{prefix}}_{{version}}"
+authority = "{{prefix}}_{{version}}-{{git \"id 8\"}}"
+
+releasebuild = [
+    "@zip grad_adminMessages_{{semver.major}}.{{semver.minor}}.{{semver.patch}}.{{semver.build}}"
+]
+
+[header_exts]
+version= "{{git \"id 8\"}}"
