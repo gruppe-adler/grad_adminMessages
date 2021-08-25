@@ -44,8 +44,10 @@ class ga_adminMessages_sendBoxBase: RscEdit {
     font = "EtelkaMonospacePro";
     sizeEx = "0.7 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 
-    onLoad = "uiNamespace setVariable [""grad_adminMessages_sendBoxCtrl"",(_this select 0)]";
-    onUnLoad = "uiNamespace setVariable [""grad_adminMessages_sendBoxCtrl"",nil]";
+    onLoad = "uiNamespace setVariable [""grad_adminMessages_sendBoxCtrl"", (_this select 0)]";
+    onUnLoad = "uiNamespace setVariable [""grad_adminMessages_sendBoxCtrl"", nil]";
+
+    onKeyDown = "if ((_this select 1) isEqualTo 28 && !(_this select 2) && !(_this select 3) && !(_this select 4)) then {call grad_adminMessages_fnc_sendMessage;};";
 
     x = GA_ADMINMESSAGES_EDITBOX_X;
     y = GA_ADMINMESSAGES_EDITBOX_Y;
