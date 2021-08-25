@@ -30,8 +30,8 @@ if (
 
 
 // add message to chat either way >> user can check chat history on map, if enabled
-ga_adminMessages_channel radioChannelAdd [player];
-ga_adminMessages_channel radioChannelSetCallsign format [localize "STR_grad_ADMINMESSAGES_CHANNEL",_info];
+GVAR(channel) radioChannelAdd [player];
+GVAR(channel) radioChannelSetCallsign format [localize "STR_grad_ADMINMESSAGES_CHANNEL",_info];
 
-player customChat [ga_adminMessages_channel, _message];
-ga_adminMessages_channel radioChannelRemove [player];
+player customChat [GVAR(channel), _message];
+GVAR(channel) radioChannelRemove [player];
