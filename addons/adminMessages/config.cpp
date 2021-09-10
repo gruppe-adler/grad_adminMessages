@@ -15,7 +15,6 @@ class CfgPatches {
 };
 
 #include "cfgEventHandlers.hpp"
-#include "cfgFunctions.hpp"
 
 #include "gui\defines.hpp"
 #include "gui\sendBoxBase.hpp"

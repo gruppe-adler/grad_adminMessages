@@ -7,11 +7,11 @@ if exist a3 (
 mklink /j a3 include\a3
 
 mkdir x
-mkdir x\rnt
-if exist x\rnt\addons (
-  rmdir x\rnt\addons
+mkdir x\grad_adminMessages
+if exist x\grad_adminMessages\addons (
+  rmdir x\grad_adminMessages\addons
 )
-mklink /j x\rnt\addons addons
+mklink /j x\grad_adminMessages\addons addons
 
 IF [%1] == [] (
   tools\hemtt build --force --release
@@ -22,8 +22,8 @@ IF [%1] == [] (
 set BUILD_STATUS=%errorlevel%
 
 rmdir a3
-rmdir x\rnt\addons
-rmdir x\rnt
+rmdir x\grad_adminMessages\addons
+rmdir x\grad_adminMessages
 rmdir x
 
 if %BUILD_STATUS% neq 0 (

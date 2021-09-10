@@ -8,7 +8,7 @@ class ga_adminMessages_sendBoxTitleBase: RscTitle {
     idc = -1;
     style = 0;
 
-    onLoad = "_this call grad_adminMessages_fnc_setTitle";
+    onLoad = QUOTE(_this call FUNC(setTitle));
 
     text = "ERROR ";
     colorBackground[] = {
@@ -44,10 +44,10 @@ class ga_adminMessages_sendBoxBase: RscEdit {
     font = "EtelkaMonospacePro";
     sizeEx = "0.7 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 
-    onLoad = "uiNamespace setVariable [""grad_adminMessages_sendBoxCtrl"", (_this select 0)]";
-    onUnLoad = "uiNamespace setVariable [""grad_adminMessages_sendBoxCtrl"", nil]";
+    onLoad = QUOTE(uiNamespace setVariable [ARR_2(QQGVAR(sendBoxCtrl), (_this select 0))]);
+    onUnLoad = QUOTE(uiNamespace setVariable [ARR_2(QQGVAR(sendBoxCtrl), nil)]);
 
-    onKeyDown = "if ((_this select 1) isEqualTo 28 && !(_this select 2) && !(_this select 3) && !(_this select 4)) then {call grad_adminMessages_fnc_sendMessage;};";
+    onKeyDown = QUOTE(if ((_this select 1) isEqualTo 28 && !(_this select 2) && !(_this select 3) && !(_this select 4)) then {call FUNC(sendMessage);};);
 
     x = GA_ADMINMESSAGES_EDITBOX_X;
     y = GA_ADMINMESSAGES_EDITBOX_Y;
@@ -58,11 +58,11 @@ class ga_adminMessages_sendBoxBase: RscEdit {
 class ga_adminMessages_sendBoxButtonBase: RscButtonMenu {
     idc = GA_ADMINMESSAGES_IDC_SENDBUTTON;
 
-    onLoad = "uiNamespace setVariable [""grad_adminMessages_sendBoxButtonCtrl"",(_this select 0)]; _this call grad_adminMessages_fnc_setSendButtonPosition";
-    onUnLoad = "uiNamespace setVariable [""grad_adminMessages_sendBoxButtonCtrl"",nil]";
+    onLoad = QUOTE( _this call FUNC(setSendButtonPosition));
+    onUnLoad = QUOTE(uiNamespace setVariable [ARR_2(QQGVAR(sendBoxButtonCtrl), nil)]);
 
     text = "$STR_grad_ADMINMESSAGES_SENDBOXBUTTON";
-    action = "call grad_adminMessages_fnc_sendMessage";
+    action = QUOTE(call FUNC(sendMessage));
 
     x = GA_ADMINMESSAGES_TITLE_X;
     y = GA_ADMINMESSAGES_SENDBUTTON_Y;
@@ -75,11 +75,10 @@ class ga_adminMessages_sendBoxListboxBase: RscCombo {
 
     font = "EtelkaMonospacePro";
     rowHeight = 10;
-    /*sizeEx = "0.7 * ((((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";*/
 
-    onLoad = "uiNamespace setVariable [""grad_adminMessages_sendBoxListboxCtrl"",(_this select 0)]; _this call grad_adminMessages_fnc_initListbox";
-    onUnLoad = "uiNamespace setVariable [""grad_adminMessages_sendBoxListboxCtrl"",nil]";
-    onLBSelChanged = "_this call grad_adminMessages_fnc_onRecipientChanged";
+    onLoad = QUOTE(_this call FUNC(initListbox));
+    onUnLoad = QUOTE(uiNamespace setVariable [ARR_2(QQGVAR(sendBoxListboxCtrl), nil)]);
+    onLBSelChanged = QUOTE(_this call FUNC(onRecipientChanged));
 
     x = GA_ADMINMESSAGES_TITLE_X;
     y = GA_ADMINMESSAGES_SENDBUTTON_Y;
