@@ -10,7 +10,7 @@
     <a href="https://github.com/gruppe-adler/grad_adminMessages/releases">
         <img src="https://img.shields.io/github/downloads/gruppe-adler/grad_adminMessages/total.svg?style=flat-square&label=Downloads" alt="grad_adminMessages Downloads">
     </a>
-    <a href="http://steamcommunity.com/sharedfiles/filedetails/?id=1224892496">
+    <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=2584716811">
         <img src="https://img.shields.io/badge/Steam-Workshop-1B2838.svg?style=flat-square" alt="Steam Workshop">
     </a>
   <a href="https://github.com/gruppe-adler/grad_adminMessages/workflows">
