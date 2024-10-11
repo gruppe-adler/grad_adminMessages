@@ -5,6 +5,7 @@ mainprefix = "x"
 
 [files]
 include = [
+    "meta.cpp",
     "mod.cpp",
     "logo_active_ca.paa",
     "logo_ca.paa",
