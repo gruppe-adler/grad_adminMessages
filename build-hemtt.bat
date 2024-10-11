@@ -1,29 +1,31 @@
 @echo off
 set BIOUTPUT=1
 
+python tools\create_prep.py %*
+
 if exist a3 (
   rmdir a3
 )
 mklink /j a3 include\a3
 
 mkdir x
-mkdir x\grad_adminMessages
-if exist x\grad_adminMessages\addons (
-  rmdir x\grad_adminMessages\addons
+mkdir x\grad_adminmessages
+if exist x\grad_adminmessages\addons (
+  rmdir x\grad_adminmessages\addons
 )
-mklink /j x\grad_adminMessages\addons addons
+mklink /j x\grad_adminmessages\addons addons
 
 IF [%1] == [] (
-  tools\hemtt build --force --release
+  tools\hemtt.exe build
 ) ELSE (
-  tools\hemtt build %1
+  tools\hemtt.exe release
 )
 
 set BUILD_STATUS=%errorlevel%
 
 rmdir a3
-rmdir x\grad_adminMessages\addons
-rmdir x\grad_adminMessages
+rmdir x\grad_adminmessages\addons
+rmdir x\grad_adminmessages
 rmdir x
 
 if %BUILD_STATUS% neq 0 (
@@ -31,5 +33,6 @@ if %BUILD_STATUS% neq 0 (
   exit /b %errorlevel%
 ) else (
   echo Build successful
+  sleep 1
   EXIT
 )
