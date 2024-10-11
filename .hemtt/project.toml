@@ -23,3 +23,6 @@ path = "addons/main/script_version.hpp"
 
 [properties]
 url = "https://github.com/gruppe-adler/grad_adminMessages/releases"
+
+[lints.sqf]
+command_case = false

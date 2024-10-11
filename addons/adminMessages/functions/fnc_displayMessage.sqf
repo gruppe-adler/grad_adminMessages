@@ -28,10 +28,10 @@ if (
 
 };
 
-
 // add message to chat either way >> user can check chat history on map, if enabled
 GVAR(channel) radioChannelAdd [player];
-GVAR(channel) radioChannelSetCallsign format [localize "STR_grad_ADMINMESSAGES_CHANNEL",_info];
+GVAR(channel) radioChannelSetCallSign format [localize "STR_grad_ADMINMESSAGES_CHANNEL", _info];
 
 player customChat [GVAR(channel), _message];
+systemChat _message;
 GVAR(channel) radioChannelRemove [player];
