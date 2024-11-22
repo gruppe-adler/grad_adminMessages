@@ -17,12 +17,10 @@ if ([] call FUNC(isAdminOrZeus)) then {
     private _lbText = _listbox lbText _lbCurSel;
     private _receiveConditionParams = [];
 
-    private _compileLbData = call compile _lbData;
-
-    private _receiveCondition = if (_compileLbData < 0) then {
-        switch (_compileLbData) do {
+    private _receiveCondition = if ((call compile _lbData) < 0) then {
+        switch (call compile _lbData) do {
             case (-2): {{true}};                                                //EVERYONE
-            case (-3): {{[] call FUNC(isAdminOrZeus)}};        //OTHER ADMINS AND ZEUS
+            case (-3): {{[] call FUNC(isAdminOrZeus)}};                         //OTHER ADMINS AND ZEUS
             case (-4): {{playerSide == WEST}};
             case (-5): {{playerSide == EAST}};
             case (-6): {{playerSide == INDEPENDENT}};
