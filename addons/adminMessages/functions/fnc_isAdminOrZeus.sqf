@@ -1,4 +1,4 @@
 #include "script_component.hpp"
 
-serverCommandAvailable "#kick" ||
-!isNull (getAssignedCuratorlogic player)
+serverCommandAvailable "#kick" || // Alternative could be: call BIS_fnc_admin > 0
+!isNull (getAssignedCuratorLogic player)

@@ -17,12 +17,12 @@ if ([] call FUNC(isAdminOrZeus)) then {
     private _lbText = _listbox lbText _lbCurSel;
     private _receiveConditionParams = [];
 
-    private _compileLbData = call compile _lbData;
+    private _compiledListBox = [] call compile _lbData;
 
-    private _receiveCondition = if (_compileLbData < 0) then {
-        switch (_compileLbData) do {
+    private _receiveCondition = if (_compiledListBox < 0) then {
+        switch (_compiledListBox) do {
             case (-2): {{true}};                                                //EVERYONE
-            case (-3): {{[] call FUNC(isAdminOrZeus)}};        //OTHER ADMINS AND ZEUS
+            case (-3): {{[] call FUNC(isAdminOrZeus)}};                         //OTHER ADMINS AND ZEUS
             case (-4): {{playerSide == WEST}};
             case (-5): {{playerSide == EAST}};
             case (-6): {{playerSide == INDEPENDENT}};
@@ -38,14 +38,14 @@ if ([] call FUNC(isAdminOrZeus)) then {
     [format ["%1 %2",localize "STR_grad_ADMINMESSAGES_TO",_lbText],_message] call FUNC(displayMessage);
 
     // send message to recipient
-    [profileName,getPlayerUID player,_message,_receiveCondition,_receiveConditionParams] remoteExec [QFUNC(receiveMessage), 0, false];
+    [QGVAR(EH_receiveMessage), [profileName,getPlayerUID player,_message,_receiveCondition,_receiveConditionParams]] call CBA_fnc_globalEvent;
 
 } else {
     // display sent message locally
     [format ["%1 %2",localize "STR_grad_ADMINMESSAGES_TO","Admin"],_message] call FUNC(displayMessage);
 
     // send message to recipient
-    [profileName,getPlayerUID player,_message] remoteExec [QFUNC(receiveMessage),0,false];
+    [QGVAR(EH_receiveMessage), [profileName,getPlayerUID player,_message]] call CBA_fnc_globalEvent;
 };
 
 playSound "3DEN_notificationDefault";

@@ -28,10 +28,20 @@ if (
 
 };
 
-// add message to chat either way >> user can check chat history on map, if enabled
-GVAR(channel) radioChannelAdd [player];
-GVAR(channel) radioChannelSetCallSign format [localize "STR_grad_ADMINMESSAGES_CHANNEL", _info];
 
-player customChat [GVAR(channel), _message];
-systemChat _message;
-GVAR(channel) radioChannelRemove [player];
+// add message to chat either way >> user can check chat history on map, if enabled
+private _player = ace_player;   // ace_player so that a Remote Controlling Zeus see's the message.
+private _channelID = GVAR(channel);
+
+_channelID radioChannelAdd [_player];
+_channelID radioChannelSetCallSign format [localize "STR_grad_ADMINMESSAGES_CHANNEL", _info];
+
+// Adds frame delay due to the wierd fucky wucky that 2.18 did n stuff
+[
+    {
+        params ["_player", "_message", "_channelID"];
+        _player customChat [_channelID, _message];
+        _channelID radioChannelRemove [_player];
+    },
+    [_player, _message, _channelID]
+] call CBA_fnc_execNextFrame;
