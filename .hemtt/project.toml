@@ -1,7 +1,11 @@
-name = "Gruppe Adler Admin Messages"
-prefix = "grad_adminmessages"
-author = "Salbei"
 mainprefix = "x"
+prefix = "grad_adminmessages"
+
+name = "Gruppe Adler Admin Messages"
+
+[properties]
+author = "Salbei"
+url = "https://github.com/gruppe-adler/grad_adminMessages/releases"
 
 [files]
 include = [
@@ -14,15 +18,16 @@ include = [
     "LICENSE",
     "README.md"
 ]
-exclude = [
 
+exclude = [
+    "*.psd",        # By default this list is empty
+    "*.md",
+    "/.vscode/",
 ]
 
 [version]
 path = "addons/main/script_version.hpp"
 
-[properties]
-url = "https://github.com/gruppe-adler/grad_adminMessages/releases"
 
 [lints.sqf]
 command_case = false
