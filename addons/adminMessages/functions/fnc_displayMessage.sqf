@@ -31,10 +31,10 @@ if (
 
 // add message to chat either way >> user can check chat history on map, if enabled
 private _player = ace_player;   // ace_player so that a Remote Controlling Zeus see's the message.
-private _chID = GVAR(channel);
+private _channelID = GVAR(channel);
 
-_chID radioChannelAdd [_player];
-_chID radioChannelSetCallSign format [localize "STR_grad_ADMINMESSAGES_CHANNEL", _info];
+_channelID radioChannelAdd [_player];
+_channelID radioChannelSetCallSign format [localize "STR_grad_ADMINMESSAGES_CHANNEL", _info];
 
 // Adds frame delay due to the wierd fucky wucky that 2.18 did n stuff
 [
