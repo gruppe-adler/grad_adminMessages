@@ -7,3 +7,6 @@ PREP_RECOMPILE_START;
 PREP_RECOMPILE_END;
 
 ADDON = true;
+
+
+[QGVAR(EH_recieveMessage), FUNC(recieveMessage)] call CBA_fnc_addEventHandler;

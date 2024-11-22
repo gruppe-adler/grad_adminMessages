@@ -36,14 +36,14 @@ if ([] call FUNC(isAdminOrZeus)) then {
     [format ["%1 %2",localize "STR_grad_ADMINMESSAGES_TO",_lbText],_message] call FUNC(displayMessage);
 
     // send message to recipient
-    [profileName,getPlayerUID player,_message,_receiveCondition,_receiveConditionParams] remoteExec [QFUNC(receiveMessage), 0, false];
+    [QGVAR(EH_recieveMessage), [profileName,getPlayerUID player,_message,_receiveCondition,_receiveConditionParams]] call CBA_fnc_globalEvent;
 
 } else {
     // display sent message locally
     [format ["%1 %2",localize "STR_grad_ADMINMESSAGES_TO","Admin"],_message] call FUNC(displayMessage);
 
     // send message to recipient
-    [profileName,getPlayerUID player,_message] remoteExec [QFUNC(receiveMessage),0,false];
+    [QGVAR(EH_recieveMessage), [profileName,getPlayerUID player,_message]] call CBA_fnc_globalEvent;
 };
 
 playSound "3DEN_notificationDefault";
