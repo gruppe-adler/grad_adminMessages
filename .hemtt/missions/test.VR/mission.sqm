@@ -12,14 +12,14 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={0.47298321,29.067928,-25.468061};
-		dir[]={0.031283207,-0.75997806,0.64924896};
-		up[]={0.036577139,0.64992648,0.75911689};
-		aside[]={0.99886912,1.7450247e-007,-0.04813011};
+		pos[]={19.795731,17.005024,-0.16433755};
+		dir[]={-0.69012582,-0.47396299,0.54696196};
+		up[]={-0.3714883,0.88051784,0.29442453};
+		aside[]={0.62115061,-6.8801455e-08,0.78373283};
 	};
 };
 binarizationWanted=0;
-sourceName="exec";
+sourceName="test";
 addons[]=
 {
 	"A3_Characters_F"
@@ -748,7 +748,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4.7683716e-007,5.0014391,8.0500002};
+						position[]={4.7683716e-07,5.0014391,8.0500002};
 						angles[]={0,3.1415927,0};
 					};
 					side="Civilian";
@@ -1053,7 +1053,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={4.7683716e-007,5.0014391,12.05};
+						position[]={4.7683716e-07,5.0014391,12.05};
 						angles[]={0,3.1415927,0};
 					};
 					side="Civilian";
