@@ -39,8 +39,9 @@ _chID radioChannelSetCallSign format [localize "STR_grad_ADMINMESSAGES_CHANNEL",
 // Adds frame delay due to the wierd fucky wucky that 2.18 did n stuff
 [
     {
-        _this#0 customChat [_this#2, _this#1];
-        _this#2 radioChannelRemove [_this#0];
+        params ["_player", "_message", "_channelID"];
+        _player customChat [_channelID, _message];
+        _channelID radioChannelRemove [_player];
     },
-    [_player, _message, _chID]
+    [_player, _message, _channelID]
 ] call CBA_fnc_execNextFrame;
