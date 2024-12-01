@@ -28,7 +28,7 @@ if (
 
 };
 
-
+/*
 // add message to chat either way >> user can check chat history on map, if enabled
 private _player = ace_player;   // ace_player so that a Remote Controlling Zeus see's the message.
 private _channelID = GVAR(channel);
@@ -45,3 +45,10 @@ _channelID radioChannelSetCallSign format [localize "STR_grad_ADMINMESSAGES_CHAN
     },
     [_player, _message, _channelID]
 ] call CBA_fnc_execNextFrame;
+*/
+
+GVAR(channel) radioChannelAdd [player];
+GVAR(channel) radioChannelSetCallSign format [localize "STR_grad_ADMINMESSAGES_CHANNEL", _info];
+
+player customChat [GVAR(channel), _message];
+GVAR(channel) radioChannelRemove [player];
